@@ -1,0 +1,51 @@
+{% if shop.metafields.my_app.announcement != blank %}
+  <div class="announcement-banner-app" style="background-color: {{ block.settings.bg_color }}; color: {{ block.settings.text_color }};">
+    <p class="announcement-banner-app__text">{{ shop.metafields.my_app.announcement }}</p>
+  </div>
+
+  <style>
+    .announcement-banner-app {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 12px 20px;
+      text-align: center;
+      font-weight: 600;
+      z-index: 2147483647; /* Ensure it stays on top of everything */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .announcement-banner-app__text {
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+    }
+
+    /* Add padding to the body so the banner doesn't cover the site header */
+    body {
+      padding-top: 50px !important; 
+    }
+  </style>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Announcement Banner",
+  "target": "body",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    }
+  ]
+}
+{% endschema %}
