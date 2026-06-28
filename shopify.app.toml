@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "ff62db19a25c586d8e06447608d1a4fb"
-application_url = "https://example.com"
+application_url = "https://announcement-app-nrtx.onrender.com"
 embedded = true
 name = "announcement-app"
 
